@@ -1,0 +1,2 @@
+# Tribe
+TypeScript Tripe Task
