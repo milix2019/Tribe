@@ -1,0 +1,18 @@
+// Global CSS
+@import './mixins';
+@import './functions';
+@import './breakpoints';
+@import './variables';
+@import './style';
+
+// container
+@import '../container/home';
+
+// component
+@import '../component/Left/left';
+@import '../component/Middle/middle';
+@import '../component/Right/right';
+@import '../component/Page404/page404';
+@import '../component/Navbar/navbar.scss';
+@import '../component/AddContent/addContent';
+@import '../component/Collapse/collapse';

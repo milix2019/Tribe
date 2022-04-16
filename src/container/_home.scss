@@ -1,0 +1,22 @@
+.mainContainer {
+  padding: rem(48px) rem(64px) 0 rem(64px);
+  .bodyContainer {
+    display: flex;
+    .content {
+      max-width: 1100px;
+      flex-grow: 1;
+      // width: calc(100% - 250px);
+      height: 100vh;
+      overflow-y: auto;
+      display: flex;
+    }
+  }
+  @include lessThan($screen-md) {
+    .content {
+      flex-direction: column;
+    }
+    .rightContainer {
+      width: 100%;
+    }
+  }
+}

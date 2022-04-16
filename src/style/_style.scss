@@ -1,0 +1,195 @@
+/**
+|--------------------------------------------------
+|	Global css to be use in entire app
+|--------------------------------------------------
+*/
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f4f7;
+  overflow: hidden;
+}
+* {
+  font-family: 'Roboto', sans-serif;
+}
+@font-face {
+  font-family: 'Roboto', sans-serif;
+  src: local('Glence'),
+    url('http://fonts.cdnfonts.com/css/roboto') format('truetype');
+}
+
+/**
+|--------------------------------------------------
+|	Custom Btn styles
+|--------------------------------------------------
+*/
+.primary-button {
+  box-sizing: border-box;
+  background: $primary;
+  color: white;
+  font-size: $btnFontSize;
+  border: 1px solid $primary;
+  border-radius: $btnBorderRadius;
+  position: relative;
+  cursor: pointer;
+  &:hover {
+    color: #fff;
+    border: 1px solid $primary-2;
+  }
+  &:before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 500ms;
+  }
+  &:hover::before {
+    /* Show the pseudo-element on hover. */
+    opacity: 1;
+  }
+  &:disabled {
+    cursor: no-drop;
+  }
+  &:active {
+    background: $primary-2;
+  }
+}
+.inverse_button {
+  box-sizing: border-box;
+  background: $white;
+  font-size: $btnFontSize;
+  border: solid 1px $grey-5;
+  color: $grey-7;
+  border-radius: $btnBorderRadius;
+  position: relative; /* For positioning the pseudo-element */
+  cursor: pointer;
+  &:hover {
+    color: $grey-7;
+    border: 1px solid $grey-5;
+  }
+  &:before {
+    /* Position the pseudo-element. */
+    content: ' ';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 500ms;
+  }
+
+  &:hover::before {
+    /* Show the pseudo-element on hover. */
+    opacity: 1;
+  }
+  &:disabled {
+    cursor: no-drop;
+  }
+}
+
+.inputNotValid {
+  border-color: $error-3;
+  box-shadow: 0 0 0 0.2rem rgba($error, 0.25);
+  background-image: url('../assets/errorCircleFilled.svg');
+  background-repeat: no-repeat;
+  background-position: 98% center;
+  &:focus {
+    border-color: $error-3;
+    box-shadow: 0 0 0 0.2rem rgba($error, 0.25);
+  }
+}
+
+/**
+|--------------------------------------------------
+|	When the container is empty
+|--------------------------------------------------
+*/
+.noData {
+  text-align: center;
+  img {
+    margin: rem(16px) 0;
+  }
+  span {
+    display: block;
+    font-size: $mdFontSize;
+    color: $grey-5;
+  }
+}
+
+/**
+|--------------------------------------------------
+|	Tooltips
+|--------------------------------------------------
+*/
+
+.tooltip {
+  display: flex;
+  align-items: center;
+  .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: $grey-6;
+    font-size: $smFontSize;
+    font-weight: $regularFontWeight;
+    color: $white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+  &:hover {
+    .tooltiptext {
+      visibility: visible !important;
+    }
+  }
+  img {
+    height: 15px;
+    width: 15px;
+  }
+}
+
+/**
+|--------------------------------------------------
+|	Spinner
+|--------------------------------------------------
+*/
+
+.custom-spinner {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 4px solid #ece9e9;
+    border-top: 6px solid $primary-3;
+    border-radius: 100%;
+    will-change: transform;
+    animation: spin 1s infinite linear;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

@@ -1,0 +1,176 @@
+.addContentContainer {
+  padding: rem(64px) rem(64px) 0 rem(200px);
+  .header {
+    background-image: url('https://cdn.sstatic.net/Img/ask/background.svg?v=2e9a8205b368');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    height: 100px;
+    margin: rem(16px) 0;
+    .headline {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      font-weight: $regularFontWeight;
+      font-size: $pageTitleFontSize;
+      color: $grey-9;
+    }
+  }
+  .body-container {
+    display: flex;
+    .card-body {
+      display: flex;
+      flex-grow: 1;
+      margin-right: rem(16px);
+      flex-direction: column;
+      height: 100%;
+      padding: rem(10px) rem(10px);
+      background-color: $white;
+      color: #5a5b5b;
+      border-radius: $borderRadius;
+      box-shadow: 0 0.9px 3px 0 rgb(27 28 28 / 19%),
+        0 0.3px 1px 0 rgb(27 28 28 / 4%);
+      .title-question-container {
+        .title-question-label {
+          display: flex;
+          font-weight: $bolderFontWeight;
+          font-size: $lgFontSize;
+          color: $grey-9;
+          margin-bottom: 5px;
+        }
+        .title-question-desc {
+          font-weight: $regularFontWeight;
+          font-size: $smFontSize;
+          color: $grey-7;
+          margin-bottom: 5px;
+        }
+        .form-control {
+          display: block;
+          margin-bottom: rem(16px);
+          width: 100%;
+          height: 20px;
+          padding: rem(5px) 0 rem(5px) rem(5px);
+          font-size: $smFontSize;
+          font-weight: 400;
+          line-height: 1.5;
+          color: #495057;
+          background-color: #fff;
+          background-clip: padding-box;
+          border: 1px solid #ced4da;
+          border-radius: 0.25rem;
+          transition: border-color 0.15s ease-in-out,
+            box-shadow 0.15s ease-in-out;
+          &:focus {
+            color: #495057;
+            background-color: #fff;
+            border-color: #80bdff;
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+          }
+        }
+      }
+      .body-question-container {
+        .body-question-label {
+          display: flex;
+          font-weight: $bolderFontWeight;
+          font-size: $lgFontSize;
+          color: $grey-9;
+          margin-bottom: 5px;
+        }
+        .body-question-desc {
+          font-weight: $regularFontWeight;
+          font-size: $smFontSize;
+          color: $grey-7;
+          margin-bottom: 5px;
+        }
+        .body-question-textarea {
+          textarea {
+            width: 100%;
+            height: 200px;
+            border-color: #ced4da;
+          }
+        }
+      }
+    }
+    .card-side {
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      // flex-grow: 1;
+      height: 100%;
+      // padding: rem(10px) rem(10px);
+      background-color: $white;
+      color: #5a5b5b;
+      border-radius: $borderRadius;
+      box-shadow: 0 0.9px 3px 0 rgb(27 28 28 / 19%),
+        0 0.3px 1px 0 rgb(27 28 28 / 4%);
+    }
+    @include lessThan($screen-sm) {
+      flex-direction: column;
+      .card-body {
+        margin-right: 0;
+      }
+      .card-side {
+        margin-top: rem(16px);
+        width: 100%;
+      }
+    }
+  }
+  .save-question {
+    padding: rem(8px) rem(5px);
+    margin: rem(16px) rem(5px);
+    width: 100px;
+    transition: all 0.25s ease-out;
+    &.loading {
+      width: 130px;
+      text-align: left;
+    }
+    &.loading:after {
+      content: '';
+      position: absolute;
+      border-radius: 100%;
+      right: 6px;
+      top: 50%;
+      width: 0px;
+      height: 0px;
+      margin-top: -2px;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      border-left-color: #fff;
+      border-top-color: #fff;
+      animation: spin 0.6s infinite linear, grow 0.3s forwards ease-out;
+    }
+    @keyframes spin {
+      to {
+        transform: rotate(359deg);
+      }
+    }
+    @keyframes grow {
+      to {
+        width: 14px;
+        height: 14px;
+        margin-top: -8px;
+        right: 13px;
+      }
+    }
+  }
+  .checkboxInput {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    outline: none;
+    &.checkboxInput:checked {
+      background-color: $primary;
+      border: 4px solid #ddd;
+    }
+  }
+  label {
+    font-size: $smFontSize;
+    font-weight: $regularFontWeight;
+    color: $grey-7;
+  }
+  @include lessThan($screen-sm) {
+    height: 700px !important;
+    overflow-y: auto;
+    padding: rem(64px) rem(64px) 0 rem(64px);
+  }
+}

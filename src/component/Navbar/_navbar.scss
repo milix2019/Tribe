@@ -1,0 +1,56 @@
+.topnav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  height: 50px;
+  background-color: $white;
+  box-shadow: 0 0.9px 3px 0 rgb(27 28 28 / 19%),
+    0 0.3px 1px 0 rgb(27 28 28 / 4%);
+  padding: 0 rem(48px);
+  display: flex;
+  align-items: center;
+  .menu-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    svg {
+      cursor: pointer;
+      path {
+        fill: $primary;
+      }
+    }
+    .search {
+      display: flex;
+      .search-term {
+        border: 3px solid $primary-3;
+        border-right: none;
+        padding: 5px;
+        height: 20px;
+        border-radius: 5px 0 0 5px;
+        outline: none;
+        color: #9dbfaf;
+        &:focus {
+          color: $primary;
+        }
+      }
+      .search-button {
+        width: 40px;
+        height: 36px;
+        border: 1px solid $primary;
+        background: $primary;
+        text-align: center;
+        color: #fff;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        font-size: $smFontSize;
+        svg {
+          path {
+            fill: $white;
+          }
+        }
+      }
+    }
+  }
+}

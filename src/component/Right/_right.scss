@@ -1,0 +1,45 @@
+.rightContainer {
+  width: 300px;
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    margin: rem(16px) 0 0 rem(16px);
+    background-color: #fdf7e2;
+    color: #5a5b5b;
+    border-radius: $borderRadius;
+    box-shadow: 0 0.9px 3px 0 rgb(27 28 28 / 19%),
+      0 0.3px 1px 0 rgb(27 28 28 / 4%);
+    .text-title {
+      height: 40px;
+      padding: 0 rem(16px);
+      align-items: center;
+      justify-content: start;
+      background-color: #fbf3d5;
+      display: flex;
+      font-size: $smFontSize;
+      color: $grey-9;
+      border: 1px solid #f1e5bc;
+      &:first-child {
+        border-top-left-radius: $borderRadius;
+        border-top-right-radius: $borderRadius;
+      }
+    }
+    .text-item {
+      display: flex;
+      flex-direction: column;
+      font-size: $smFontSize;
+      color: $grey-7;
+      display: flex;
+      padding: rem(10px) rem(16px);
+      align-items: center;
+      justify-content: start;
+      div {
+        height: 20px;
+      }
+      svg {
+        margin-right: 5px;
+        margin-top: -14px;
+      }
+    }
+  }
+}
