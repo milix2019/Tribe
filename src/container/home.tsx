@@ -44,14 +44,12 @@ const Home = (): JSX.Element => {
       // return if its null
       if (!nodes) return;
       setSpaces(nodes);
-      console.log('List of 5 spaces:', nodes);
     });
     client.posts.listPostTypes({ limit: 5 }, 'basic').then((posts) => {
       const { nodes } = posts;
       // return if its null
       if (!nodes) return;
       setPosts(nodes);
-      console.log('List of 5 spaces:', nodes);
     });
   };
 
@@ -60,7 +58,6 @@ const Home = (): JSX.Element => {
     setQuestions(questionState);
   }, [questions, questionState]);
 
-  // console.log(questions);
   return (
     <div className="mainContainer">
       <div className="bodyContainer">
